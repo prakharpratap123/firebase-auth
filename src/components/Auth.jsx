@@ -7,11 +7,11 @@ import {
 } from "firebase/auth";
 
 const Auth = () => {
-  // const [signInDetails, setSignInDetails] = useState({
-  //   email: "",
-  //   password: "",
-  // });
-  const { email, password } = {};
+  const [signInDetails, setSignInDetails] = useState({
+    email: "",
+    password: "",
+  });
+  const { email, password } = signInDetails || {};
 
   const signIn = async () => {
     try {
@@ -42,20 +42,23 @@ const Auth = () => {
       <input
         value={email}
         placeholder="Email"
-        // onChange={({ target: { value } }) =>
-        //   setSignInDetails((prev) => ({ ...prev, email: value }))
-        // }
+        onChange={({ target: { value } }) =>
+          setSignInDetails((prev) => ({ ...prev, email: value }))
+        }
       />
       <br /> <br />
       <input
         value={password}
         placeholder="Password"
-        // onChange={({ target: { value } }) =>
-        //   setSignInDetails((prev) => ({ ...prev, password: value }))
-        // }
+        onChange={({ target: { value } }) =>
+          setSignInDetails((prev) => ({ ...prev, password: value }))
+        }
       />
       <br /> <br />
-      <button onClick={signIn}> Sign In</button>
+      <button className="btn btn-primary" onClick={signIn}>
+        {" "}
+        Sign In
+      </button>
       <br /> <br />
       <button onClick={signInWithGoogle}> Sign in with Google</button>
       <br /> <br />

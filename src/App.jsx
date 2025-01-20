@@ -1,12 +1,12 @@
-import Auth from "./components/Auth";
-import DisplayMovies from "./components/DisplayMovies";
-import "./App.css";
+import Router from "./router";
+import "./App.scss";
 
 function App() {
   return (
     <div className="app-container">
-      <Auth />
-      <DisplayMovies />
+      <Router />
+      {/* <Auth />
+      <DisplayMovies /> */}
     </div>
   );
 }
