@@ -49,12 +49,13 @@ const MovieList = () => {
           </Fade>
         </Modal>
       )}
-      {movieList?.map(({ title, id, actorName }) => (
+      {movieList?.map(({ title, id, actorName, awardedOscar }) => (
         <MovieCard
           title={title}
           id={id}
           actorName={actorName}
           setIsModalOpen={setIsModalOpen}
+          awardedOscar={awardedOscar}
         />
       ))}
     </div>

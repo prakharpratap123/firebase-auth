@@ -6,7 +6,7 @@ import { deleteDoc, doc } from "@firebase/firestore";
 import { db } from "../../../../config/firebase";
 import "./style.scss";
 
-const MovieCard = ({ title, id, setIsModalOpen }) => {
+const MovieCard = ({ title, id, setIsModalOpen, awardedOscar, actorName }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -72,6 +72,11 @@ const MovieCard = ({ title, id, setIsModalOpen }) => {
             <MenuItem onClick={() => handleEdit(id)}>Edit</MenuItem>
             <MenuItem onClick={() => handleDelete(id)}>Delete</MenuItem>
           </Menu>
+        </div>
+
+        <div className="details">
+          <p> Actor Name : {actorName} </p>
+          <p> Got Oscar : {awardedOscar ? "Yes" : "No"} </p>
         </div>
       </div>
     </>
